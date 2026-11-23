@@ -22,14 +22,14 @@ utilization = (arrival rate × hours of work per lot) / (number of tools × avai
 
 | Tool group | Expected | Simulated (AnyLogic, 1 year) |
 |---|---|---|
-| DEPO  | 75.3% | 74% |
+| DEPO  | 75.3% | 73% |
 | LITHO | 75.7% | 74% |
 | ETCH (bottleneck) | 79.3% | 78% |
-| IMPL  | 31.0% | 30% |
+| IMPL  | 31.0% | 29% |
 | CMP   | 49.1% | 48% |
-| METRO | 25.3% | 25% |
+| METRO | 25.3% | 24% |
 
-One simulated year released 3,981 lots (2,152 A + 1,829 B). Every tool group is within 1.5 percentage points of its hand calculation, and ETCH is the bottleneck in both.
+One simulated year released 3,942 lots (2,118 A + 1,824 B). Every tool group is within 2.5 percentage points of its hand calculation, and ETCH is the bottleneck in both.
 
 ![one year run](results/one_year.png)
 
@@ -40,11 +40,11 @@ One simulated year released 3,981 lots (2,152 A + 1,829 B). Every tool group is 
 1. `pip install pandas openpyxl pulp highspy` (add `gurobipy` to use Gurobi)
 2. (Optional) `python python/generate_fab_data.py` regenerates `fab_data.xlsx`; move it into `data/`
 3. `python python/schedule_milp.py --data data/fab_data.xlsx --lots-a 3 --lots-b 3 --solver highs`
-4. Open `anylogic/FabSim.alp` in AnyLogic 8.9 (PLE is enough) and click Run
+4. Open `anylogic/Fabsim.alp` in AnyLogic 8.9 (PLE is enough) and click Run
 
 ## Repository layout
 ```
-anylogic/   FabSim.alp + database/
+anylogic/   Fabsim.alp + database/
 python/     generate_fab_data.py, schedule_milp.py
 data/       fab_data.xlsx
 results/    screenshots and charts
