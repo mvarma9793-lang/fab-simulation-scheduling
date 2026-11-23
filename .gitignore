@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+schedule.xlsx
+*.log
+anylogic/**/*.class
